@@ -1,10 +1,12 @@
 import './App.css';
 
+import { Outlet } from 'react-router-dom';
+
 function App() {
   return (
-    <>
-      <p className="read-the-docs">Setup project</p>
-    </>
+    <main>
+      <Outlet />
+    </main>
   );
 }
 
