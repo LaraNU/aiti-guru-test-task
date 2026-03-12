@@ -1,5 +1,9 @@
 :root {
-  font-family: Inter, sans-serif;
+  --font-family: 'Cairo', sans-serif;
+  --second-family: 'Open Sans', sans-serif;
+  --third-family: 'Inter', sans-serif;
+  --font3: 'Roboto Mono', sans-serif;
+  --font4: 'Roboto', sans-serif;
   line-height: 1.5;
   font-weight: 400;
   font-size: 16px;
@@ -19,4 +23,8 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+}
+
+p {
+  margin: 0;
 }
