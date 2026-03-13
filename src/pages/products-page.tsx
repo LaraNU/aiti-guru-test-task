@@ -1,11 +1,14 @@
 import { CirclePlus, RefreshCw } from 'lucide-react';
+import { useState } from 'react';
 
+import { AddProductModal } from '@/components';
 import { ProductsTable } from '@/features/products-table';
 import { SearchBar } from '@/features/search-bar';
 
 import styles from './products-page.module.css';
 
 export const ProductsPage = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <>
       <header className={styles.pageHeader}>
@@ -20,12 +23,14 @@ export const ProductsPage = () => {
             <button className={styles.refreshButton}>
               <RefreshCw color="#515161" />
             </button>
-            <button className={styles.addButton}>
+            <button className={styles.addButton} onClick={() => setIsModalOpen(true)}>
               <CirclePlus color="#fff" /> Добавить
             </button>
           </div>
         </div>
         <ProductsTable />
+
+        <AddProductModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       </main>
     </>
   );
