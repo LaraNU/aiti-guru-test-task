@@ -42,7 +42,11 @@ export const productColumns: ColumnType<Product>[] = [
     dataIndex: 'rating',
     key: 'rating',
     width: '15%',
-    render: (rating: number) => `${rating.toFixed(1)}/5`,
+    render: (rating: number) => (
+      <span>
+        <span className={rating < 3 ? styles.rating : ''}>{rating.toFixed(1)}</span>/5
+      </span>
+    ),
     align: 'center',
   },
   {

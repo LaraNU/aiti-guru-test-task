@@ -58,3 +58,7 @@
   align-items: center;
   gap: 10px;
 }
+
+.rating {
+  color: #f11010;
+}
