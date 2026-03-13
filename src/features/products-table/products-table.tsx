@@ -21,12 +21,14 @@ export const ProductsTable = () => {
   const queries = new URLSearchParams(window.location.search);
   const sortBy = queries.get('sortBy') || '';
   const order = queries.get('order') || '';
+  const search = queries.get('q') || '';
 
   const { data, isLoading, isFetching } = useGetProductsQuery({
     limit: pageSize,
     skip: (currentPage - 1) * pageSize,
     sortBy,
     order,
+    search,
   });
 
   const currentProducts = useMemo(() => data?.products || [], [data]);
