@@ -6,6 +6,7 @@ import { useSearchParams } from 'react-router-dom';
 import { useGetProductsQuery } from '@/features/products/products-api';
 
 import { productColumns } from '../columns/products-columns';
+import { TablePagination } from '../pagination/pagination';
 import { Product } from '../types/product';
 import styles from './products-table.module.css';
 
@@ -79,11 +80,12 @@ export const ProductsTable = () => {
     setSearchParams(newParams);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
   return (
     <div className={styles.tableContainer}>
       {isFetching && (
         <Progress
-          percent={100}
+          percent={95}
           status="active"
           showInfo={false}
           strokeColor="#3c538e"
@@ -110,13 +112,6 @@ export const ProductsTable = () => {
               fontFamily: '"Cairo", sans-serif',
               lineHeight: 1.2,
             },
-            Pagination: {
-              itemSize: 30,
-              itemActiveBg: '#797fea',
-              colorPrimary: '#ffffff',
-              colorPrimaryHover: '#ffffff',
-              borderRadius: 4,
-            },
           },
         }}
       >
@@ -126,14 +121,7 @@ export const ProductsTable = () => {
           dataSource={data ? data.products : []}
           loading={isLoading}
           rowKey="id"
-          pagination={{
-            current: currentPage,
-            pageSize: pageSize,
-            total: data?.total || 0,
-            placement: ['bottomEnd'],
-            showSizeChanger: false,
-            onChange: handlePageChange,
-          }}
+          pagination={false}
           scroll={{ y: 71 * 5, x: 'max-content' }}
           rowClassName={(record) => (selectedRowKeys.includes(record.id) ? styles.selectedRow : '')}
           onRow={(record) => ({
@@ -148,6 +136,13 @@ export const ProductsTable = () => {
           }}
         />
       </ConfigProvider>
+
+      <TablePagination
+        current={currentPage}
+        total={data?.total || 0}
+        pageSize={pageSize}
+        onChange={handlePageChange}
+      />
     </div>
   );
 };

@@ -1,0 +1,17 @@
+.paginationWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.totalText {
+  font-family: var(--font4);
+  font-weight: 400;
+  font-size: 18px;
+  color: #969b9f;
+}
+
+.totalNumbers {
+  color: #333;
+}
