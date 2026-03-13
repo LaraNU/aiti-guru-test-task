@@ -18,4 +18,6 @@ export interface ProductsApiResponse {
 export interface GetProductsParams {
   skip?: number;
   limit?: number;
+  sortBy?: string;
+  order?: string;
 }

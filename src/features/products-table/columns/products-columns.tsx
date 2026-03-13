@@ -1,7 +1,7 @@
 import { ColumnType } from 'antd/es/table';
 import { CircleEllipsis, Minus, Plus } from 'lucide-react';
 
-import { Product } from '../types/product';
+import { Product } from '../model/types/product';
 import styles from './products-columns.module.css';
 
 export const productColumns: ColumnType<Product>[] = [
@@ -47,6 +47,8 @@ export const productColumns: ColumnType<Product>[] = [
         <span className={rating < 3 ? styles.rating : ''}>{rating.toFixed(1)}</span>/5
       </span>
     ),
+    sorter: true,
+    showSorterTooltip: false,
     align: 'center',
   },
   {
@@ -55,6 +57,8 @@ export const productColumns: ColumnType<Product>[] = [
     key: 'price',
     width: '15%',
     render: (price: number) => `${price.toLocaleString('ru-RU')} ₽`,
+    sorter: true,
+    showSorterTooltip: false,
     align: 'center',
   },
   {

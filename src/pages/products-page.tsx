@@ -1,6 +1,6 @@
 import { CirclePlus, RefreshCw } from 'lucide-react';
 
-import { ProductsTable } from '@/components';
+import { ProductsTable } from '@/features/products-table';
 
 import styles from './products-page.module.css';
 
