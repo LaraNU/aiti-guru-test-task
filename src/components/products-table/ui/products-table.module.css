@@ -1,0 +1,49 @@
+.tableContainer {
+  position: relative;
+  width: 100%;
+}
+
+.progressBar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+.wrapper {
+  width: 100%;
+}
+
+.checkbox {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  flex-shrink: 0;
+  border: 1px solid #b2b3b9;
+  transition: all 0.2s ease;
+}
+
+.checkboxChecked {
+  background: #3c538e;
+  border-color: #3c538e;
+}
+
+.selectedRow td:first-child {
+  position: relative;
+}
+
+.selectedRow td:first-child::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #3c538e;
+  z-index: 2;
+}

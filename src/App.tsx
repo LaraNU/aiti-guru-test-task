@@ -17,18 +17,16 @@ const defaultData: ThemeData = {
 
 function App() {
   return (
-    <main>
-      <ConfigProvider
-        theme={{
-          token: {
-            colorPrimary: defaultData.colorPrimary,
-            borderRadius: defaultData.borderRadius,
-          },
-        }}
-      >
-        <Outlet />
-      </ConfigProvider>
-    </main>
+    <ConfigProvider
+      theme={{
+        token: {
+          colorPrimary: defaultData.colorPrimary,
+          borderRadius: defaultData.borderRadius,
+        },
+      }}
+    >
+      <Outlet />
+    </ConfigProvider>
   );
 }
 
